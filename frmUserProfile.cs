@@ -134,5 +134,26 @@ namespace DBPROJECT
                 pictBoxUser.Image = Image.FromFile(openPhoto.FileName);
             }
         }
+        private void frmUserProfile_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+        private void EnableSaveButton(object sender, EventArgs e)
+        {
+            this.btnSave.Enabled = true;
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.btnSave.Enabled = false;
+
+        }
+
+        private void frmUserProfile_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.btnSave.Enabled)
+            {
+
+            }
+        }
     }
 }
