@@ -30,7 +30,6 @@ namespace DBPROJECT
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserProfile));
-            this.pictBoxUser = new System.Windows.Forms.PictureBox();
             this.btnLoadPhoto = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnChangePwd = new System.Windows.Forms.Button();
@@ -48,18 +47,9 @@ namespace DBPROJECT
             this.txtSMTPport = new System.Windows.Forms.TextBox();
             this.pkrBirthdate = new System.Windows.Forms.DateTimePicker();
             this.cbxGender = new System.Windows.Forms.ComboBox();
+            this.pictBoxUser = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxUser)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictBoxUser
-            // 
-            this.pictBoxUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictBoxUser.Image = ((System.Drawing.Image)(resources.GetObject("pictBoxUser.Image")));
-            this.pictBoxUser.Location = new System.Drawing.Point(106, 12);
-            this.pictBoxUser.Name = "pictBoxUser";
-            this.pictBoxUser.Size = new System.Drawing.Size(255, 242);
-            this.pictBoxUser.TabIndex = 0;
-            this.pictBoxUser.TabStop = false;
             // 
             // btnLoadPhoto
             // 
@@ -189,6 +179,7 @@ namespace DBPROJECT
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(337, 20);
             this.txtEmail.TabIndex = 13;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // txtSMTPHOST
             // 
@@ -196,6 +187,7 @@ namespace DBPROJECT
             this.txtSMTPHOST.Name = "txtSMTPHOST";
             this.txtSMTPHOST.Size = new System.Drawing.Size(337, 20);
             this.txtSMTPHOST.TabIndex = 14;
+            this.txtSMTPHOST.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // txtSMTPport
             // 
@@ -203,6 +195,7 @@ namespace DBPROJECT
             this.txtSMTPport.Name = "txtSMTPport";
             this.txtSMTPport.Size = new System.Drawing.Size(124, 20);
             this.txtSMTPport.TabIndex = 15;
+            this.txtSMTPport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // pkrBirthdate
             // 
@@ -213,6 +206,7 @@ namespace DBPROJECT
             this.pkrBirthdate.Size = new System.Drawing.Size(125, 20);
             this.pkrBirthdate.TabIndex = 16;
             this.pkrBirthdate.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.pkrBirthdate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // cbxGender
             // 
@@ -224,6 +218,16 @@ namespace DBPROJECT
             this.cbxGender.Name = "cbxGender";
             this.cbxGender.Size = new System.Drawing.Size(125, 21);
             this.cbxGender.TabIndex = 17;
+            this.cbxGender.TextChanged += new System.EventHandler(this.cbxGender_TextChanged);
+            // 
+            // pictBoxUser
+            // 
+            this.pictBoxUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictBoxUser.Location = new System.Drawing.Point(106, 12);
+            this.pictBoxUser.Name = "pictBoxUser";
+            this.pictBoxUser.Size = new System.Drawing.Size(255, 242);
+            this.pictBoxUser.TabIndex = 0;
+            this.pictBoxUser.TabStop = false;
             // 
             // frmUserProfile
             // 
@@ -255,7 +259,6 @@ namespace DBPROJECT
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Profile";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUserProfile_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserProfile_FormClosed);
             this.Load += new System.EventHandler(this.frmUserProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxUser)).EndInit();
             this.ResumeLayout(false);
@@ -264,8 +267,6 @@ namespace DBPROJECT
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictBoxUser;
         private System.Windows.Forms.Button btnLoadPhoto;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnChangePwd;
@@ -283,5 +284,6 @@ namespace DBPROJECT
         private System.Windows.Forms.TextBox txtSMTPport;
         private System.Windows.Forms.DateTimePicker pkrBirthdate;
         private System.Windows.Forms.ComboBox cbxGender;
+        private System.Windows.Forms.PictureBox pictBoxUser;
     }
 }

@@ -83,6 +83,66 @@ namespace DBPROJECT
         {
             UserProfilefrm.Dispose();
         }
+
+        frmUser Userfrm;
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Userfrm = new frmUser();
+            Userfrm.FormClosed += Userfrm_FormClosed;
+            Userfrm.MdiParent = this;
+            Userfrm.Show();
+        }
+
+        private void Userfrm_FormClosed(object sender, EventArgs e)
+        {
+            Userfrm.Dispose();
+        }
+
+        frmCustomers Customerfrm;
+
+        private void customer_btn_Click(object sender, EventArgs e)
+        {
+            Customerfrm = new frmCustomers();
+            Customerfrm.FormClosed += Customerfrm_FormClosed;
+            Customerfrm.MdiParent = this;
+            Customerfrm.Show();
+        }
+
+        private void Customerfrm_FormClosed(object sender, EventArgs e)
+        {
+            Customerfrm.Dispose();
+        }
+
+        frmVendors Vendorfrm;
+
+        private void vendor_btn_Click(object sender, EventArgs e)
+        {
+            Vendorfrm = new frmVendors();
+            //Vendorfrm.FormClosed += Vedndorfrm_FormClosed;
+            Vendorfrm.MdiParent = this;
+            Vendorfrm.Show();
+        }
+
+        private void Vendorfrm_FormClosed(object sender, EventArgs e)
+        {
+            Vendorfrm.Dispose();
+        }
+
+        frmItems Itemfrm;
+
+        private void item_btn_Click(object sender, EventArgs e)
+        {
+            Itemfrm = new frmItems();
+            //Itemfrm.FormClosed += Itemfrm_FormClosed;
+            Itemfrm.MdiParent = this;
+            Itemfrm.Show();
+        }
+        private void Itemfrm_FormClosed(object sender, EventArgs e)
+        {
+            Itemfrm.Dispose();
+        }
+
     }
 }
     
